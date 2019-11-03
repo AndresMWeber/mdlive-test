@@ -1,7 +1,7 @@
 <div align=center>
     <h1 align=center>
         <br>
-        MDLive Coding Test
+        MDLive QA Challenge
         <br>
         <img width="100px" align=center src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" alt="NodeJS logo">
         <img width="100px" align=center src="https://webassets.mongodb.com/_com_assets/cms/MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" alt="MongoDB logo">
