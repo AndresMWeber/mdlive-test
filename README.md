@@ -5,9 +5,10 @@
         <br>
         <img width="100px" align=center src="https://nodejs.org/static/images/logos/nodejs-new-pantone-black.png" alt="NodeJS logo">
         <img width="100px" align=center src="https://webassets.mongodb.com/_com_assets/cms/MongoDB_Logo_FullColorBlack_RGB-4td3yuxzjs.png" alt="MongoDB logo">
-     <img width="100px" align=center src="https://camo.githubusercontent.com/fc61dcbdb7a6e49d3adecc12194b24ab20dfa25b/68747470733a2f2f692e636c6f756475702e636f6d2f7a6659366c4c376546612d3330303078333030302e706e67" alt="express logo"> 
-     <img width="100px" align=center src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8yWEpBmr0xgBOMcYdpdEFieBMIP6hlUJbYTIVtqUdnquhyK0S" alt="jest logo"> 
-     <img width="100px" align=center src="https://assets.brandfolder.com/po873r-7udt4w-b3x13z/view@2x.png?v=1552347719" alt="circleci logo">
+        <img width="100px" align=center src="https://camo.githubusercontent.com/fc61dcbdb7a6e49d3adecc12194b24ab20dfa25b/68747470733a2f2f692e636c6f756475702e636f6d2f7a6659366c4c376546612d3330303078333030302e706e67" alt="express logo"> 
+        <img width="100px" align=center src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8yWEpBmr0xgBOMcYdpdEFieBMIP6hlUJbYTIVtqUdnquhyK0S" alt="jest logo">
+        <img width="100px" align=center src="https://assets.brandfolder.com/po873r-7udt4w-b3x13z/view@2x.png?v=1552347719" alt="circleci logo">
+        <img width="100px" align=center src="https://raw.githubusercontent.com/Marak/faker.js/master/logo.png" alt="fakerjs logo">
     </h1>
     <a align=center href="https://circleci.com/gh/AndresMWeber/mdlive-test">
         <img src="https://circleci.com/gh/AndresMWeber/mdlive-test.svg?style=svg" />
@@ -17,7 +18,7 @@
 ## 📝 Table of Contents
 - [About](#about)
 - [Setup](#setup)
-- [Testing](#usage)
+- [Testing](#testing)
 - [Built Using](#built_using)
 - [Authors](#authors)
 
@@ -27,8 +28,9 @@
 
 *   Clone the [repo]('https://github.com/AndresMWeber/mdlive-test/')
 *   Install the server dependencies with: ```npm install``` or ```yarn install```
-*   Run the local backend server and react frontend server using ```npm start``` or ```yarn start```
-*   Open `` `http://localhost:3000` `` and Have fun!
+*   Seed the database by running ```yarn seed``` or ```npm run seed``` in the root directory
+*   Run the local backend server using ```npm start``` or ```yarn start```
+*   Open ```http://localhost:3000``` and Have fun!
 
 ### Environment Variables
 *   (optional) Create a [Mongo DB Cluster](https://cloud.mongodb.com/)
@@ -50,6 +52,7 @@
 - [Express.js](https://expressjs.com/) - Backend
 - [Jest](https://jestjs.io/) - Testing
 - [Supertest](https://www.npmjs.com/package/supertest) - API Testing
+- [Faker.js](https://github.com/marak/Faker.js/) - Fake Database Population
 - [CircleCI](https://circleci.com) - Continuous Integration
 
 # ✍️ Authors <a name = "authors"></a>
