@@ -67,7 +67,7 @@ describe('Apps', () => {
         })
 
         it('tests by=id and start=1 and order=desc', async done => {
-            const response = await request.get('/apps?range.by=id&range.start=1&range.order=desc')
+            const response = await request.get('/apps?range.by=id&range.start=298&range.order=desc')
             expect(response.status).toBe(200)
             expect(response.body.length).toBe(50)
             expect(response.body[0].id).toBe(298)
@@ -80,7 +80,16 @@ describe('Apps', () => {
             expect(response.status).toBe(200)
             expect(response.body.length).toBe(6)
             expect(response.body[0].id).toBe(5)
-            expect(response.body[5].id).toBe(10)
+            expect(response.body[response.body.length - 1].id).toBe(10)
+            done()
+        })
+
+        it('tests by=name and start=my-app-001 and end=my-app-050 and max=10 and order=asc', async done => {
+            const response = await request.get('/apps?range.by=name&range.start=my-app-001&range.end=my-app-050&range.max=10&range.order=asc')
+            expect(response.status).toBe(200)
+            expect(response.body.length).toBe(10)
+            expect(response.body[0].id).toBe(1)
+            expect(response.body[response.body.length - 1].id).toBe(10)
             done()
         })
     })
@@ -209,4 +218,33 @@ describe('Apps', () => {
         })
     })
 
+    describe('BY=NAME/START/END/MAX relationships', () => {
+
+        it('tests by=name and start=my-app-005 and end=my-app-050 and max=10 and order=asc', async done => {
+            const response = await request.get('/apps?range.by=name&range.start=my-app-005&range.end=my-app-050&range.max=10&range.order=asc')
+            expect(response.status).toBe(200)
+            expect(response.body.length).toBe(10)
+            expect(response.body[0].id).toBe(5)
+            expect(response.body[response.body.length - 1].id).toBe(14)
+            done()
+        })
+
+        it('tests by=name and start=my-app-020 and end=my-app-029 and max=500 and order=asc', async done => {
+            const response = await request.get('/apps?range.by=name&range.start=my-app-020&range.end=my-app-029&range.max=500&range.order=asc')
+            expect(response.status).toBe(200)
+            expect(response.body.length).toBe(10)
+            expect(response.body[0].id).toBe(20)
+            expect(response.body[response.body.length - 1].id).toBe(29)
+            done()
+        })
+
+        it('tests by=name and start=my-app-029 and end=my-app-020 and order=desc', async done => {
+            const response = await request.get('/apps?range.by=name&range.start=my-app-029&range.end=my-app-020&range.order=desc')
+            expect(response.status).toBe(200)
+            expect(response.body.length).toBe(10)
+            expect(response.body[0].id).toBe(29)
+            expect(response.body[response.body.length - 1].id).toBe(20)
+            done()
+        })
+    })
 })
