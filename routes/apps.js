@@ -53,7 +53,7 @@ router.get('/', (req, res, next) => {
             range.by = range.by || 'id'
             range.max = +range.max || 50
             range.order = range.order || 'asc'
-            if (range.by) sortObjectArray(apps, range.order === 'desc', range.by)
+            sortObjectArray(apps, range.order === 'desc', range.by)
             res.json(limitArray(apps, range))
         })
         .catch(err => next(err))
