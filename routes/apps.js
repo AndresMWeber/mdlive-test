@@ -21,10 +21,10 @@ const sortObjectArray = (array, reverse, objectProperty) => {
     array.sort(sortFunction)
 }
 
-const limitArray = (array, max, start, end) => {
+const limitArray = (array, { max, start, end }) => {
     start = Math.max(start, 0)
     endIndex = max + start
-    end = (endIndex <= end || end == 0) ? endIndex : end + 1
+    end = (endIndex <= end || end === null || end === 0) ? endIndex : end + 1
     return array.slice(start, end)
 }
 
@@ -38,15 +38,22 @@ const createNestedQueryObject = (queryPrefix, query) => {
 
 router.get('/', (req, res, next) => {
     const range = createNestedQueryObject('range', req.query)
-    range.start = range.start || 0
-    range.end = range.end || null
-    range.max = range.max || 50
-    range.order = range.order || 'asc'
 
     App.find({})
-        .then(result => {
-            if (range.by) sortObjectArray(result, range.order === 'desc', range.by)
-            res.json(limitArray(result, +range.max, +range.start, +range.end))
+        .then(apps => {
+            range.by = range.by || 'id'
+            range.max = +range.max || 50
+            range.order = range.order || 'asc'
+
+            let defaultTerm = ((range.by === "id") ? 0 : apps[0].name)
+            let startTerm = range.start || defaultTerm
+            let endTerm = range.end || defaultTerm
+
+            range.start = startTerm ? apps.findIndex(e => String(e[range.by]) === String(startTerm)) : 0
+            range.end = endTerm ? apps.findIndex(e => String(e[range.by]) === String(endTerm)) : null
+
+            if (range.by) sortObjectArray(apps, range.order === 'desc', range.by)
+            res.json(limitArray(apps, range))
         })
         .catch(err => next(err))
 })

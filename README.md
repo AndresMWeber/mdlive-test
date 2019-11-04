@@ -8,7 +8,6 @@
         <img width="100px" align=center src="https://camo.githubusercontent.com/fc61dcbdb7a6e49d3adecc12194b24ab20dfa25b/68747470733a2f2f692e636c6f756475702e636f6d2f7a6659366c4c376546612d3330303078333030302e706e67" alt="express logo"> 
         <img width="100px" align=center src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8yWEpBmr0xgBOMcYdpdEFieBMIP6hlUJbYTIVtqUdnquhyK0S" alt="jest logo">
         <img width="100px" align=center src="https://assets.brandfolder.com/po873r-7udt4w-b3x13z/view@2x.png?v=1552347719" alt="circleci logo">
-        <img width="100px" align=center src="https://raw.githubusercontent.com/Marak/faker.js/master/logo.png" alt="fakerjs logo">
     </h1>
     <h1 align=center>
         <a href="https://circleci.com/gh/AndresMWeber/mdlive-test">
@@ -57,8 +56,8 @@
 - [Express.js](https://expressjs.com/) - Backend
 - [Jest](https://jestjs.io/) - Testing
 - [Supertest](https://www.npmjs.com/package/supertest) - API Testing
-- [Faker.js](https://github.com/marak/Faker.js/) - Fake Database Population
 - [CircleCI](https://circleci.com) - Continuous Integration
+- [CodeClimate](https://d341kum51qu34d.cloudfront.net/images/2019-04-redesign/code_climate_logo-a046042f.svg) - Code Health Metrics
 
 # ✍️ Authors <a name = "authors"></a>
 * [Andres Weber](https://github.com/AndresMWeber)
