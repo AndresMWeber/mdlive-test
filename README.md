@@ -97,7 +97,7 @@ Returns the json list of apps matching the query params.
 | https://mdlive-test.herokuapp.com/apps?range.by=id |
 | https://mdlive-test.herokuapp.com/apps?range.start=5&range.end=28&range.max=25 |
 | https://mdlive-test.herokuapp.com/apps?range.by=name&range.order=asc&range.start=my-app-150 |
-| https://mdlive-test.herokuapp.com/apps?range.by=name&range.order=desc&range.start=my-app-150range.start=my-app-150 |
+| https://mdlive-test.herokuapp.com/apps?range.by=name&range.order=desc&range.start=my-app-150&range.end=my-app-120 |
 
 
 | Query Parameters | Type | Default | Description |
