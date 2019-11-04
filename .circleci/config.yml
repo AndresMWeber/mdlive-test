@@ -26,13 +26,22 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            # download test reporter as a static binary
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+
+      - run:
           name: Run Tests
           command: |
             mkdir -p ./test-results/junit
+            ./cc-test-reporter before-build
             yarn test --ci --reporters=jest-junit
+            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
 
       - store_artifacts:
           path: ./test-results/junit
-          
+
       - store_test_results:
           path: ./test-results

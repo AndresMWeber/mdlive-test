@@ -163,8 +163,8 @@ describe('Apps', () => {
             done()
         })
 
-        it('end identifier equaling max and both are set: start=5 and end=29 and max=25', async done => {
-            const response = await request.get('/apps?range.start=5&range.end=40&range.max=25')
+        it('end identifier equaling max and both are set: start=5 and end=30 and max=25', async done => {
+            const response = await request.get('/apps?range.start=5&range.end=30&range.max=25')
             expect(response.status).toBe(200)
             expect(response.body.length).toBe(25)
             expect(response.body[0].id).toBe(5)
