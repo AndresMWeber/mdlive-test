@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
-const createDB = async(cb, verbose) => {
-    cb = cb || (() => null)
+const createDB = async(verbose) => {
     const uri = process.env.MONGODB_URI || `mongodb://localhost/${process.env.MONGODB_LOCAL || 'please-set-process-env-mongodb-uri'}`
     const communicate = message => {
         verbose && console.log(message)
@@ -14,7 +13,6 @@ const createDB = async(cb, verbose) => {
         })
         .then(x => {
             communicate(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
-            cb()
             return x
         })
         .catch(err => {
