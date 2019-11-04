@@ -1,24 +1,34 @@
-const { submitDocuments, seed } = require('./seed_helpers')
 const path = require('path')
-const bcrypt = require('bcryptjs')
 const faker = require('faker');
-
+const { submitDocuments, seed } = require('./seeds-helpers')
 require('dotenv').config({ path: path.join(__dirname, '../.env') })
-require('../configs/database')
-
 const App = require('../models/App')
-faker.seed(123);
+
+faker.seed(1234);
 
 async function createDBEntries() {
-    await submitDocuments('users', User, Array.from({ length: 200 }).map(() => {
+    await submitDocuments('apps', App, Array.from({ length: 300 }).map((e, i) => {
         return {
-            username: faker.name.findName(),
-            password: bcrypt.hashSync(faker.internet.password(), bcrypt.genSaltSync(bcryptSalt)),
-            email: faker.internet.email(),
-            avatar: faker.internet.avatar(),
-            location: { coordinates: [faker.finance.amount(-80.03, -81.84, 6), faker.finance.amount(25.13, 27.12, 6)] }
+            id: i,
+            name: generateName()
         }
     }))
 }
 
-seed(createDBEntries)
+const capitalize = str => {
+    return str[0].toUpperCase() + str.slice(1, str.length)
+}
+
+var names_tried = {}
+const generateName = () => {
+    let name = `${capitalize(faker.hacker.adjective())} ${capitalize(faker.hacker.noun())}`
+    while (names_tried[name]) {
+        name = `${capitalize(faker.hacker.adjective())} ${capitalize(faker.hacker.noun())}`
+    }
+    names_tried[name] = true
+    return name
+}
+
+module.exports = async create => {
+    return await seed(createDBEntries, create)
+}

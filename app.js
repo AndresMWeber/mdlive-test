@@ -6,7 +6,7 @@ const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 
-createDB()
+createDB(true)
 const app = express()
 
 app.set('views', path.join(__dirname, 'views'))

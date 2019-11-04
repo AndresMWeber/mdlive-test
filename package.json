@@ -5,14 +5,16 @@
     "scripts": {
         "start": "node ./bin/www",
         "dev": "nodemon ./bin/www",
-        "test": "jest --verbose ./tests",
-        "test:watch": "jest --watch"
+        "test": "jest --verbose --detectOpenHandles ./tests",
+        "test:watch": "jest --watch",
+        "seed": "cd bin && node -e \"const seed = require('./seeds.js'); seed()\"  "
     },
     "dependencies": {
         "cookie-parser": "~1.4.4",
         "debug": "~2.6.9",
         "dotenv": "^8.2.0",
         "express": "~4.16.1",
+        "faker": "^4.1.0",
         "http-errors": "~1.6.3",
         "jade": "~1.11.0",
         "mongoose": "^5.7.7",
@@ -22,10 +24,5 @@
         "jest": "^24.9.0",
         "nodemon": "^1.19.4",
         "supertest": "^4.0.2"
-    },
-    "jest": {
-        "setupFilesAfterEnv": [
-            "./tests/setup.js"
-        ]
     }
 }

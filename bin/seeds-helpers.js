@@ -1,5 +1,6 @@
 const mongoose = require('mongoose')
 const databaseEntries = {}
+const createDB = require('../configs/database')
 
 const errors = []
 
@@ -18,9 +19,10 @@ const submitDocuments = async(name, model, jsonData, drop = true) => {
     }
 }
 
-const seed = cb => {
-    console.log('starting to create DB Entries.')
-    cb()
+const seed = async(cb,) => {
+    console.log('Starting to create DB Entries.')
+    await createDB()
+    await cb()
         .then(() => {
             console.log('--> Successfully finished populating database.')
         })
@@ -36,25 +38,7 @@ const seed = cb => {
         })
 }
 
-
-
-const getRandomElement = (arr) => {
-    return arr[Math.floor(Math.random() * arr.length)]
-}
-
-const generateUniqueNumberList = function(length, min, max, arr) {
-    if (!arr) arr = []
-    if (arr.length >= length) return arr
-    let newNumber
-    if (min && max) newNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    else newNumber = Math.floor(Math.random() * length + 1);
-    if (arr.indexOf(newNumber) < 0) arr.push(newNumber);
-    return generateUniqueNumberList(length, min, max, arr);
-}
-
-module.exports ={
-    getRandomElement,
-    generateUniqueNumberList,
+module.exports = {
     seed,
     submitDocuments,
     databaseEntries
