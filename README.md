@@ -10,9 +10,14 @@
         <img width="100px" align=center src="https://assets.brandfolder.com/po873r-7udt4w-b3x13z/view@2x.png?v=1552347719" alt="circleci logo">
         <img width="100px" align=center src="https://raw.githubusercontent.com/Marak/faker.js/master/logo.png" alt="fakerjs logo">
     </h1>
-    <a align=center href="https://circleci.com/gh/AndresMWeber/mdlive-test">
-        <img src="https://circleci.com/gh/AndresMWeber/mdlive-test.svg?style=svg" />
-    </a>
+    <h1 align=center>
+        <a href="https://circleci.com/gh/AndresMWeber/mdlive-test">
+            <img src="https://circleci.com/gh/AndresMWeber/mdlive-test.svg?style=svg" />
+        </a>
+        <a href="https://codeclimate.com/github/AndresMWeber/mdlive-test/maintainability">
+            <img src="https://api.codeclimate.com/v1/badges/398646c86e86af9159ec/maintainability" />
+        </a>
+    </h1>
 </div>
 
 ## 📝 Table of Contents
