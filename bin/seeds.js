@@ -29,6 +29,6 @@ const generateName = () => {
     return name
 }
 
-module.exports = async create => {
-    return await seed(createDBEntries, create)
+module.exports = async disconnect => {
+    return await seed(createDBEntries, disconnect)
 }

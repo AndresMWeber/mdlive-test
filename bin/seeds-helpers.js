@@ -19,7 +19,7 @@ const submitDocuments = async(name, model, jsonData, drop = true) => {
     }
 }
 
-const seed = async(cb,) => {
+const seed = async(cb, disconnect = true) => {
     console.log('Starting to create DB Entries.')
     await createDB()
     await cb()
@@ -34,7 +34,10 @@ const seed = async(cb,) => {
                 console.log('\n\nRan into these errors:')
                 console.log('\n\t' + errors.join('\n\t') + '\n\n')
             }
-            mongoose.disconnect()
+            if (disconnect) {
+                console.log('Disconnecting from mongoose.')
+                mongoose.disconnect()
+            }
         })
 }
 

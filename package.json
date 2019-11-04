@@ -5,7 +5,7 @@
     "scripts": {
         "start": "node ./bin/www",
         "dev": "nodemon ./bin/www",
-        "test": "jest --verbose --detectOpenHandles ./tests",
+        "test": "jest --verbose --detectOpenHandles --forceExit ./tests",
         "test:watch": "jest --watch",
         "seed": "cd bin && node -e \"const seed = require('./seeds.js'); seed()\"  "
     },

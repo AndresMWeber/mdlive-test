@@ -10,9 +10,9 @@ describe('Apps', () => {
     let server = null
 
     beforeAll(async done => {
-        await seedDB()
-        server = app.listen(done)
-        request = supertest.agent(server)
+        await seedDB(false)
+        server = await app.listen(done)
+        request = await supertest.agent(server)
     })
 
     afterAll(async done => {
@@ -78,8 +78,9 @@ describe('Apps', () => {
         it('tests by=id and start=5 and end=10 and max=10 and order=asc', async done => {
             const response = await request.get('/apps?range.by=id&range.start=5&range.end=10&range.max=10&range.order=asc')
             expect(response.status).toBe(200)
-            expect(response.body.length).toBe(10)
+            expect(response.body.length).toBe(6)
             expect(response.body[0].id).toBe(5)
+            expect(response.body[5].id).toBe(10)
             done()
         })
     })

@@ -23,7 +23,7 @@ const sortObjectArray = (array, reverse, objectProperty) => {
 
 const limitArray = (array, max, start, end) => {
     endIndex = max + start
-    end = (endIndex < end || end == 0) ? endIndex : end
+    end = (endIndex < end || end == 0) ? endIndex : end + 1
     return array.slice(start, end)
 }
 
