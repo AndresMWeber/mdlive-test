@@ -48,6 +48,7 @@ router.get('/', (req, res, next) => {
     const range = parseNestedQueryObject('range', req.query)
 
     App.find({})
+        .lean()
         .then(apps => {
             range.by = range.by || 'id'
             range.max = +range.max || 50
