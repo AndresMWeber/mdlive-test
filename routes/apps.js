@@ -21,13 +21,13 @@ const sortObjectArray = (array, reverse, objectProperty) => {
     array.sort(sortFunction)
 }
 
-const limitArray = (apps, { by, max, start, end }) => {
-    let defaultTerm = ((by === "id") ? 0 : apps[0].name)
-    let startTerm = start || defaultTerm
-    let endTerm = end || defaultTerm
+const searchArrayByProperty = (array, property, searchTerm, defaultValue) => {
+    return array.findIndex(array => String(array[property]) === String(searchTerm)) || defaultValue
+}
 
-    start = startTerm ? apps.findIndex(app => String(app[by]) === String(startTerm)) : 0
-    end = endTerm ? apps.findIndex(app => String(app[by]) === String(endTerm)) : null
+const limitArray = (apps, { by, max, start, end }) => {
+    start = start ? searchArrayByProperty(apps, by, start, 0) : 0
+    end = end ? searchArrayByProperty(apps, by, end, null) : null
 
     start = Math.max(start, 0)
     endIndex = max + start
