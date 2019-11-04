@@ -17,6 +17,9 @@
         <a href="https://codeclimate.com/github/AndresMWeber/mdlive-test/maintainability">
             <img src="https://api.codeclimate.com/v1/badges/398646c86e86af9159ec/maintainability" />
         </a>
+        <a href="https://codeclimate.com/github/AndresMWeber/mdlive-test/test_coverage">
+            <img src="https://api.codeclimate.com/v1/badges/398646c86e86af9159ec/test_coverage" />
+        </a>
     </h1>
 </div>
 
