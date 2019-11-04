@@ -8,6 +8,7 @@
         <img width="100px" align=center src="https://camo.githubusercontent.com/fc61dcbdb7a6e49d3adecc12194b24ab20dfa25b/68747470733a2f2f692e636c6f756475702e636f6d2f7a6659366c4c376546612d3330303078333030302e706e67" alt="express logo"> 
         <img width="100px" align=center src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcS8yWEpBmr0xgBOMcYdpdEFieBMIP6hlUJbYTIVtqUdnquhyK0S" alt="jest logo">
         <img width="100px" align=center src="https://assets.brandfolder.com/po873r-7udt4w-b3x13z/view@2x.png?v=1552347719" alt="circleci logo">
+        <img width="100px" align=center src="https://firebounty.com/image/352-codeclimate-code-climate-security" alt="codeclimate logo">
     </h1>
     <h1 align=center>
         <a href="https://circleci.com/gh/AndresMWeber/mdlive-test">
@@ -20,6 +21,13 @@
             <img src="https://api.codeclimate.com/v1/badges/398646c86e86af9159ec/test_coverage" />
         </a>
     </h1>
+    <h3>Live Test Searches</h3>
+    <h4><a href="https://mdlive-test.herokuapp.com/apps">https://mdlive-test.herokuapp.com/apps</a><br>
+        <a href="https://mdlive-test.herokuapp.com/apps?range.by=id">https://mdlive-test.herokuapp.com/apps?range.by=id</a><br>
+        <a href="https://mdlive-test.herokuapp.com/apps?range.start=5&range.end=28&range.max=25">https://mdlive-test.herokuapp.com/apps?range.start=5&range.end=28&range.max=25</a><br>
+        <a href="https://mdlive-test.herokuapp.com/apps?range.by=name&range.order=asc&range.start=my-app-150">https://mdlive-test.herokuapp.com/apps?range.by=name&range.order=asc&range.start=my-app-150</a><br>
+        <a href="https://mdlive-test.herokuapp.com/apps?range.by=name&range.order=desc&range.start=my-app-150">https://mdlive-test.herokuapp.com/apps?range.by=name&range.order=desc&range.start=my-app-150</a>
+    </h4>
 </div>
 
 ## 📝 Table of Contents
