@@ -43,18 +43,19 @@
 1. Added as many test cases as I could think of, some boundary tests and tested the examples provided in the instructions.
 1. Deployed to Heroku and set up a persistent MongoDB Database on Atlas
 
-### Pagination Implementation
+
+### Notes
+#### Pagination Implementation
 From the challenge description it seemed that this implementation had a few unique characteristics: 
-1. It had a nested query string, either in stringified Object form or as a dot notated set of nested query params.  
+1. It had a nested query string, some options include a stringified Object form, bracket notated nested query params (e.g. range[by]) and a dot notated set of nested query params (e.g. range.by)
 1. The pagination could start based on finding matches for the start value, not just an index value.
 
 For the first I chose to write my own query parameter parser that would create an object based on a given key prefix, for example ```?range.by=id&range.start=5``` would become ```{"range": {"by": "id", "start"=5}}```
 
 For the second I created a helper function ```searchArrayByProperty``` which attempted to find the matches given by the query string start/end parameters within the array. 
 
-Finally for the more traditional sorting I chose to use a switch statement which incorporated ascending and descending functions for both primitive data types we expected.  This was so our sort/reverse could run in  O(n log n) instead of running through the array twice.
+Finally for the more traditional sorting I chose to use a switch statement which incorporated ascending and descending functions for both primitive data types we expected.  This was so our sort/reverse could run in ```O(n log n)``` instead of adding another ```O(n)``` to the runtime complexity.
 
-### Notes
 #### Query Parameter Structure
 I chose to interpret the query as a nested query string in the form of ```?key.subkey=value```.
 This way I was able to parse the query parameters for the key and store all the subkey values in an object.
@@ -118,9 +119,9 @@ Returns the json list of apps matching the query params.
 *  It will automatically connect to a local mongoose database named mdlive-test if you want to check out the database state after the test suite runs.
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [JavaScript](https://www.javascript.com/) - Front End
+- [NodeJS](https://nodejs.org/) - Backend Code
 - [MongoDB Atlas](https://www.mongodb.com/cloud/atlas/) - Database
-- [Express.js](https://expressjs.com/) - Backend
+- [Express.js](https://expressjs.com/) - Web Framework
 - [Jest](https://jestjs.io/) - Testing
 - [Supertest](https://www.npmjs.com/package/supertest) - API Testing
 - [CircleCI](https://circleci.com) - Continuous Integration
