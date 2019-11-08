@@ -11,6 +11,9 @@
         <img width="100px" align=center src="https://firebounty.com/image/352-codeclimate-code-climate-security" alt="codeclimate logo">
     </h1>
     <h1 align=center>
+        <a href="https://app.buddy.works/andresmweber-1/mdlive-test/pipelines/pipeline/222273/executions">
+            <img src="https://app.buddy.works/andresmweber-1/mdlive-test/pipelines/pipeline/222273/badge.svg?token=168aae22848dad7a759a7845801a9396dcc8ea8d8bc9176f7c64d672740e1bd5" />
+        </a>
         <a href="https://circleci.com/gh/AndresMWeber/mdlive-test">
             <img src="https://circleci.com/gh/AndresMWeber/mdlive-test.svg?style=svg" />
         </a>
